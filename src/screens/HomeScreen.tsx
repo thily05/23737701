@@ -53,7 +53,7 @@ export const HomeScreen: React.FC = () => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
     const [quantity, dispatchQuantity] = useReducer(cartReducer, 1);
 
-    // Fetch API với Cleanup Flag
+    // Fetch API với Cleanup Flag (alive)
     useEffect(() => {
         let isAlive = true;
         setLoading(true);
@@ -82,7 +82,7 @@ export const HomeScreen: React.FC = () => {
         setReloadToken((prev) => prev + 1);
     };
 
-    // Thứ tự 4 Chip theo MSSV số cuối 1: Học tập -> Nước -> Đồ ăn -> Tất cả
+    // Thứ tự 4 Chip theo MSSV cuối 1: Học tập -> Nước -> Đồ ăn -> Tất cả
     const categories = useMemo(() => {
         const base: Array<{ id: CategoryId; label: string }> = [
             { id: 'all', label: 'Tất cả' },
@@ -129,109 +129,111 @@ export const HomeScreen: React.FC = () => {
         </View>
     );
 
-    const renderHeader = () => (
-        <View style={styles.headerWrapper}>
-            {/* Khối (A): Header Teal chuẩn Giao diện 1 */}
-            <View
-                style={[
-                    styles.headerBar,
-                    {
-                        backgroundColor: colors.primary,
-                        paddingTop: Math.max(insets.top, 16) + 6,
-                    },
-                ]}
-            >
-                <View style={styles.headerLeft}>
-                    <Typography variant="title" color="#FFFFFF" style={styles.brandTitle}>
-                        CAMPUSMART
-                    </Typography>
-                    <Typography variant="body" color="rgba(255,255,255,0.85)" style={styles.brandSub}>
-                        Tiện lợi KTX
-                    </Typography>
-                </View>
-
-                <View style={styles.headerRight}>
-                    {/* Nút bấm đổi Sáng/Tối */}
-                    <TouchableOpacity
-                        onPress={toggleTheme}
-                        activeOpacity={0.7}
-                        hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
-                        style={[
-                            styles.themeCapsuleBtn,
-                            {
-                                backgroundColor: theme === 'dark' ? 'rgba(255,255,255,0.2)' : 'transparent',
-                            },
-                        ]}
-                    >
-                        <Typography variant="button" color="#FFFFFF" style={styles.themeCapsuleText}>
-                            {theme === 'dark' ? '🌙 Tối' : '☀️ Sáng'}
-                        </Typography>
-                    </TouchableOpacity>
-
-                    <Typography variant="subtitle" color={colors.secondary} style={styles.flashTimerText}>
-                        Flash {formattedTime}
-                    </Typography>
-                </View>
-            </View>
-
-            {/* Khối (B): Ô tìm kiếm ShopInput */}
-            <View style={styles.sectionContainer}>
-                <ShopInput
-                    colors={colors}
-                    placeholder={`Tìm món, nước, đồ dùng — ${STUDENT.mssv}`}
-                    value={searchQuery}
-                    onChangeText={setSearchQuery}
-                    style={styles.searchInputCustom}
-                />
-            </View>
-
-            {/* Khối (C): Banner Đặt nhanh · Nhận tại quầy CÓ HÌNH ẢNH MẠNG PICSUM */}
-            <View style={styles.sectionContainer}>
-                <ImageBackground
-                    source={{ uri: `https://picsum.photos/id/${BANNER_IMAGE_ID}/800/320` }}
-                    style={styles.bannerImage}
-                    imageStyle={styles.bannerImageRadius}
-                    resizeMode="cover"
+    const renderHeader = useCallback(
+        () => (
+            <View style={styles.headerWrapper}>
+                {/* Khối (A): Header Teal chuẩn Giao diện 1 */}
+                <View
+                    style={[
+                        styles.headerBar,
+                        {
+                            backgroundColor: colors.primary,
+                            paddingTop: Math.max(insets.top, 16) + 6,
+                        },
+                    ]}
                 >
-                    <View style={styles.bannerOverlay}>
-                        <Typography variant="title" color="#FFFFFF" style={styles.bannerTitle}>
-                            Đặt nhanh  ·  Nhận tại quầy
+                    <View style={styles.headerLeft}>
+                        <Typography variant="title" color="#FFFFFF" style={styles.brandTitle}>
+                            CAMPUSMART
                         </Typography>
-                        <Typography variant="body" color="rgba(255,255,255,0.95)" style={styles.bannerSub}>
-                            Cửa hàng tiện lợi ký túc xá 24/7
+                        <Typography variant="body" color="rgba(255,255,255,0.85)" style={styles.brandSub}>
+                            Tiện lợi KTX
                         </Typography>
                     </View>
-                </ImageBackground>
-            </View>
 
-            {/* Khối (D): 4 Chip bộ lọc */}
-            <View style={styles.chipContainer}>
-                {categories.map((chip) => {
-                    const isSelected = selectedCategory === chip.id;
-                    return (
-                        <Pressable
-                            key={chip.id}
+                    <View style={styles.headerRight}>
+                        <TouchableOpacity
+                            onPress={toggleTheme}
+                            activeOpacity={0.7}
+                            hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
                             style={[
-                                styles.chip,
+                                styles.themeCapsuleBtn,
                                 {
-                                    backgroundColor: isSelected ? colors.primary : colors.surface,
-                                    borderColor: colors.primary,
+                                    backgroundColor: theme === 'dark' ? 'rgba(255,255,255,0.2)' : 'transparent',
                                 },
                             ]}
-                            onPress={() => setSelectedCategory(chip.id)}
                         >
-                            <Typography
-                                variant="bodyMedium"
-                                color={isSelected ? '#FFFFFF' : colors.primary}
-                                style={styles.chipText}
-                            >
-                                {chip.label}
+                            <Typography variant="button" color="#FFFFFF" style={styles.themeCapsuleText}>
+                                {theme === 'dark' ? '🌙 Tối' : '☀️ Sáng'}
                             </Typography>
-                        </Pressable>
-                    );
-                })}
+                        </TouchableOpacity>
+
+                        <Typography variant="subtitle" color={colors.secondary} style={styles.flashTimerText}>
+                            Flash {formattedTime}
+                        </Typography>
+                    </View>
+                </View>
+
+                {/* Khối (B): Ô tìm kiếm ShopInput */}
+                <View style={styles.sectionContainer}>
+                    <ShopInput
+                        colors={colors}
+                        placeholder={`Tìm món, nước, đồ dùng — ${STUDENT.mssv}`}
+                        value={searchQuery}
+                        onChangeText={setSearchQuery}
+                        style={styles.searchInputCustom}
+                    />
+                </View>
+
+                {/* Khối (C): Banner Đặt nhanh · Nhận tại quầy PICSUM */}
+                <View style={styles.sectionContainer}>
+                    <ImageBackground
+                        source={{ uri: `https://picsum.photos/id/${BANNER_IMAGE_ID}/800/320` }}
+                        style={styles.bannerImage}
+                        imageStyle={styles.bannerImageRadius}
+                        resizeMode="cover"
+                    >
+                        <View style={styles.bannerOverlay}>
+                            <Typography variant="title" color="#FFFFFF" style={styles.bannerTitle}>
+                                Đặt nhanh  ·  Nhận tại quầy
+                            </Typography>
+                            <Typography variant="body" color="rgba(255,255,255,0.95)" style={styles.bannerSub}>
+                                Cửa hàng tiện lợi ký túc xá 24/7
+                            </Typography>
+                        </View>
+                    </ImageBackground>
+                </View>
+
+                {/* Khối (D): 4 Chip bộ lọc */}
+                <View style={styles.chipContainer}>
+                    {categories.map((chip) => {
+                        const isSelected = selectedCategory === chip.id;
+                        return (
+                            <Pressable
+                                key={chip.id}
+                                style={[
+                                    styles.chip,
+                                    {
+                                        backgroundColor: isSelected ? colors.primary : colors.surface,
+                                        borderColor: colors.primary,
+                                    },
+                                ]}
+                                onPress={() => setSelectedCategory(chip.id)}
+                            >
+                                <Typography
+                                    variant="bodyMedium"
+                                    color={isSelected ? '#FFFFFF' : colors.primary}
+                                    style={styles.chipText}
+                                >
+                                    {chip.label}
+                                </Typography>
+                            </Pressable>
+                        );
+                    })}
+                </View>
             </View>
-        </View>
+        ),
+        [colors, formattedTime, insets.top, searchQuery, selectedCategory, theme, toggleTheme, categories]
     );
 
     const renderItem = useCallback(
@@ -272,7 +274,7 @@ export const HomeScreen: React.FC = () => {
         );
     }
 
-    // Cảnh 3: Lỗi mạng (Khớp 100% hình ảnh yêu cầu)
+    // Cảnh 3: Lỗi mạng
     if (error) {
         return (
             <View style={[styles.centerContainer, { backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }]}>
@@ -301,10 +303,10 @@ export const HomeScreen: React.FC = () => {
 
             <FlatList
                 data={filteredProducts}
-                extraData={theme}
+                extraData={colors}
                 keyExtractor={(item) => `${STUDENT.mssv}-${item.id}`}
                 renderItem={renderItem}
-                ListHeaderComponent={renderHeader()}
+                ListHeaderComponent={renderHeader}
                 contentContainerStyle={styles.listContent}
                 ListEmptyComponent={
                     <View style={styles.emptyContainer}>
@@ -317,7 +319,7 @@ export const HomeScreen: React.FC = () => {
 
             {!VARIANT.watermarkAtTop && renderWatermark()}
 
-            {/* Modal Đặt Món (Câu 3a) */}
+            {/* Modal Đặt Món */}
             <Modal
                 visible={modalVisible}
                 transparent={true}

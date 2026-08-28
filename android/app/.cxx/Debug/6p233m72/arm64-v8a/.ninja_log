@@ -1,0 +1,16 @@
+# ninja log v5
+4	47	0	C:/Users/OS/Documents/CampusMart_23737701/android/app/.cxx/Debug/6p233m72/arm64-v8a/CMakeFiles/cmake.verify_globs	d9bfb6507a79f4f3
+126	5848	8096168527583820	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/610b9a25e12dfac47500bbd4b8ea7206/renderer/components/safeareacontext/States.cpp.o	7ca8be53dee47da4
+87	6543	8096168534689724	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/b002f01f69f2c437b6093184b851bea7/components/safeareacontext/EventEmitters.cpp.o	8c711272697818fa
+40	7421	8096168543376735	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/7185293bb5cf931cf6630d2362bf3bf6/source/codegen/jni/safeareacontext-generated.cpp.o	2989118de0e3e4ac
+1	8595	8096168555047323	CMakeFiles/appmodules.dir/OnLoad.cpp.o	64d8a95e0e5d361a
+27	9755	8096168566596025	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/e056257e92f30bff7457503e0ccef947/components/safeareacontext/RNCSafeAreaViewState.cpp.o	b728c5b41435741b
+114	10003	8096168569139455	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/610b9a25e12dfac47500bbd4b8ea7206/renderer/components/safeareacontext/ShadowNodes.cpp.o	6e0903e2afb09818
+68	10493	8096168574029417	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/0a6cbffdcf5624386dba1221c749558c/react/renderer/components/safeareacontext/Props.cpp.o	6bdb44bb8eba27a9
+100	11012	8096168579101512	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/b002f01f69f2c437b6093184b851bea7/components/safeareacontext/ComponentDescriptors.cpp.o	37ecc66c20f37652
+54	11878	8096168587960239	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/57f9057d34a4fc64990276af550159f0/safeareacontext/RNCSafeAreaViewShadowNode.cpp.o	5b0e44910ef7e87f
+13	12147	8096168590375276	CMakeFiles/appmodules.dir/C_/Users/OS/Documents/CampusMart_23737701/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	26d9f0315dc692f7
+11878	12148	8096168590459528	C:/Users/OS/Documents/CampusMart_23737701/android/app/build/intermediates/cxx/Debug/6p233m72/obj/arm64-v8a/libreact_codegen_safeareacontext.so	73fd3d5fbbf92878
+12148	12279	8096168592080989	C:/Users/OS/Documents/CampusMart_23737701/android/app/build/intermediates/cxx/Debug/6p233m72/obj/arm64-v8a/libappmodules.so	98a83153840e81c1
+2	53	0	C:/Users/OS/Documents/CampusMart_23737701/android/app/.cxx/Debug/6p233m72/arm64-v8a/CMakeFiles/cmake.verify_globs	d9bfb6507a79f4f3
+14	51	0	C:/Users/OS/Documents/CampusMart_23737701/android/app/.cxx/Debug/6p233m72/arm64-v8a/CMakeFiles/cmake.verify_globs	d9bfb6507a79f4f3

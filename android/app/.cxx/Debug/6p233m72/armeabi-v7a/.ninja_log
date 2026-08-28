@@ -1,0 +1,16 @@
+# ninja log v5
+5	68	0	C:/Users/OS/Documents/CampusMart_23737701/android/app/.cxx/Debug/6p233m72/armeabi-v7a/CMakeFiles/cmake.verify_globs	e1f61b2534cbfe52
+184	11550	8096168775499373	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/610b9a25e12dfac47500bbd4b8ea7206/renderer/components/safeareacontext/States.cpp.o	70f092da6ff50914
+60	12534	8096168786067873	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/b002f01f69f2c437b6093184b851bea7/components/safeareacontext/EventEmitters.cpp.o	a0b13f7c3b3c6f89
+2	13537	8096168796101767	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/7185293bb5cf931cf6630d2362bf3bf6/source/codegen/jni/safeareacontext-generated.cpp.o	e2ea1cbb206d0729
+213	15444	8096168814114955	CMakeFiles/appmodules.dir/OnLoad.cpp.o	f0ba2e6175d2904e
+12	16239	8096168823192619	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/57f9057d34a4fc64990276af550159f0/safeareacontext/RNCSafeAreaViewState.cpp.o	4be43921696441ea
+142	16608	8096168826897002	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/b002f01f69f2c437b6093184b851bea7/components/safeareacontext/ShadowNodes.cpp.o	5c003dc1649948d9
+113	17120	8096168831863899	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/610b9a25e12dfac47500bbd4b8ea7206/renderer/components/safeareacontext/Props.cpp.o	45e2990de4c0efcf
+43	18227	8096168842872986	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/9dc85b77f7ce5a4f653af40f26d09892/safeareacontext/ComponentDescriptors.cpp.o	151270355e781141
+240	19680	8096168857303992	CMakeFiles/appmodules.dir/C_/Users/OS/Documents/CampusMart_23737701/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	448024e53b2acc68
+27	19912	8096168859821051	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/57f9057d34a4fc64990276af550159f0/safeareacontext/RNCSafeAreaViewShadowNode.cpp.o	1e2cdd65bee9f21b
+19913	20192	8096168862518583	C:/Users/OS/Documents/CampusMart_23737701/android/app/build/intermediates/cxx/Debug/6p233m72/obj/armeabi-v7a/libreact_codegen_safeareacontext.so	1014e78eae482d6e
+20193	20380	8096168864600024	C:/Users/OS/Documents/CampusMart_23737701/android/app/build/intermediates/cxx/Debug/6p233m72/obj/armeabi-v7a/libappmodules.so	913a4d05ff3a8fb
+3	41	0	C:/Users/OS/Documents/CampusMart_23737701/android/app/.cxx/Debug/6p233m72/armeabi-v7a/CMakeFiles/cmake.verify_globs	e1f61b2534cbfe52
+2	29	0	C:/Users/OS/Documents/CampusMart_23737701/android/app/.cxx/Debug/6p233m72/armeabi-v7a/CMakeFiles/cmake.verify_globs	e1f61b2534cbfe52
